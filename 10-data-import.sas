@@ -36,3 +36,19 @@ data presidents;
   delimiter, 'lrecl' gives upper limit
   on how long a line before SAS gives up
   */
+
+/*********************************************
+  USING PROC IMPORT
+  Reading in Excel or .csv files
+**********************************************/
+
+proc import datafile='~/files/presidents.xls' out=presidents dbms=excel;
+  sheet='Sheet1';
+  /*
+  'datafile' specifies the file to be imported,
+  'out' names the data file to be generated in SAS,
+  'dbms' specifies what type of file,
+    use excel for .xls,
+    use xlsx for .xlsx,
+    use csv for .csv,
+  */
